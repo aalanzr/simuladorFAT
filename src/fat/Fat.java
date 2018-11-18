@@ -36,10 +36,13 @@ public class Fat {
 	public int[] inicializarFat(int tamanhoDisco, int tamanhoBloco) {
 
 		if ((tamanhoDisco % tamanhoBloco) != 0) {
-			System.out.println("Tamanho do bloco incompatível com o tamanho do disco!");
+			System.out.println("Tamanho do bloco incompatível com o tamanho do disco! Digite um valor compatível! ");
+			System.out.println();
+		} else {
+			totalBlocos = (tamanhoDisco / tamanhoBloco);
+			return tbFat = new int[totalBlocos];	
 		}
-		totalBlocos = (tamanhoDisco / tamanhoBloco);
-		return tbFat = new int[totalBlocos];
+		return tbFat;
 	}
 	
 	public void imprimeFat() {
@@ -56,5 +59,6 @@ public class Fat {
 //		for (int i = 0; i <= tbFat.length; i++) {
 //			System.out.println(tbFat[i]);
 //		}
+		System.out.println();
 	}
 }

@@ -11,13 +11,20 @@ public class Main {
 		Fat fat = new Fat();
 		scanner = new Scanner(System.in);
 		int opt;
+		boolean fatInvalido = false;
 		
-		System.out.println("Digite o tamanho do disco em Bytes");
-		int tamDisco = scanner.nextInt();
-		System.out.println("Digite tamanho do bloco");
-		int tamBloco = scanner.nextInt();
-		
-		fat.inicializarFat(tamDisco, tamBloco);
+		do {
+			System.out.println("Digite o tamanho do disco em Bytes");
+			int tamDisco = scanner.nextInt();
+			System.out.println("Digite tamanho do bloco");
+			int tamBloco = scanner.nextInt();
+			
+			if (fat.inicializarFat(tamDisco, tamBloco) == null) {
+				fatInvalido = false;
+			} else {
+				fatInvalido = true;
+			}		
+		} while(!fatInvalido);
 		
 		System.out.println("Escolha uma das opções abaixo:");
 		System.out.println();
