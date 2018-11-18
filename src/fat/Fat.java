@@ -34,25 +34,27 @@ public class Fat {
 	}
 	
 	public int[] inicializarFat(int tamanhoDisco, int tamanhoBloco) {
-		if (tamanhoDisco % tamanhoBloco != 0) {
+
+		if ((tamanhoDisco % tamanhoBloco) != 0) {
 			System.out.println("Tamanho do bloco incompatível com o tamanho do disco!");
-		} else {
 		}
-			System.out.println("tamanho ok"); //remover está apenas para teste
-			totalBlocos = tamanhoDisco % tamanhoBloco;
-			return tbFat = new int[totalBlocos];
+		totalBlocos = (tamanhoDisco / tamanhoBloco);
+		return tbFat = new int[totalBlocos];
 	}
 	
 	public void imprimeFat() {
 		
-		System.out.println("Total de Blocos do disco: ");
+		System.out.println("Total de Blocos do disco: " + totalBlocos);
 		System.out.println("Blocos ocupados: ");
 		System.out.println("Memoria Ocupada (Bytes): ");
 		System.out.println("Blocos Livres: ");
 		System.out.println("Memoria Livre (Bytes): ");
-		
-		for (int i = 0; i <= tbFat.length; i++) {
-			System.out.println(tbFat[i]);
-		}
+		System.out.println();
+		System.out.println("Mapeamento de Blocos FAT");
+		System.out.println("End. " + " " + "Encadeamento");
+
+//		for (int i = 0; i <= tbFat.length; i++) {
+//			System.out.println(tbFat[i]);
+//		}
 	}
 }
