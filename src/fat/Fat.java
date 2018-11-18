@@ -40,8 +40,11 @@ public class Fat {
 			System.out.println();
 		} else {
 			totalBlocos = (tamanhoDisco / tamanhoBloco);
-			return tbFat = new int[totalBlocos];	
+			tbFat = new int[totalBlocos];
 		}
+//		for (int i = 0; i < tbFat.length; i++) {
+//			tbFat[i] = 'x';
+//		}
 		return tbFat;
 	}
 	
@@ -56,9 +59,9 @@ public class Fat {
 		System.out.println("Mapeamento de Blocos FAT");
 		System.out.println("End. " + " " + "Encadeamento");
 
-//		for (int i = 0; i <= tbFat.length; i++) {
-//			System.out.println(tbFat[i]);
-//		}
+		for (int i = 0; i < tbFat.length; i++) {
+			System.out.println(i + "         " + tbFat[i]);
+		}
 		System.out.println();
 	}
 }
