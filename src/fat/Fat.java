@@ -5,9 +5,14 @@ public class Fat {
 	private int tamanhoDisco;
 	private int tamanhoBloco;
 	private int totalBlocos;
+	private int blocosOcupados;
+	private int memoriaOcupada;
 	private int [] tbFat;
 	
 	
+	public Fat() {
+		super();
+	}
 	public int getTamanhoDisco() {
 		return tamanhoDisco;
 	}
@@ -25,6 +30,18 @@ public class Fat {
 	}
 	public void setTotalBlocos(int totalBlocos) {
 		this.totalBlocos = totalBlocos;
+	}
+	public int getBlocosOcupados() {
+		return blocosOcupados;
+	}
+	public void setBlocosOcupados(int blocosOcupados) {
+		this.blocosOcupados = blocosOcupados;
+	}
+	public int getMemoriaOcupada() {
+		return memoriaOcupada;
+	}
+	public void setMemoriaOcupada(int memoriaOcupada) {
+		this.memoriaOcupada = memoriaOcupada;
 	}
 	public int[] getTbFat() {
 		return tbFat;
@@ -51,11 +68,12 @@ public class Fat {
 	public void imprimeFat() {
 		
 		System.out.println("Total de Blocos do disco: " + totalBlocos);
-		System.out.println("Blocos ocupados: ");
-		System.out.println("Memoria Ocupada (Bytes): ");
-		System.out.println("Blocos Livres: ");
-		System.out.println("Memoria Livre (Bytes): ");
+		System.out.println("Blocos ocupados: " +  blocosOcupados);
+		System.out.println("Memoria Ocupada (Bytes): " + memoriaOcupada);
+		System.out.println("Blocos Livres: " + (totalBlocos - blocosOcupados));
+		System.out.println("Memoria Livre (Bytes): " + (tamanhoDisco - memoriaOcupada));
 		System.out.println();
+		
 		System.out.println("Mapeamento de Blocos FAT");
 		System.out.println("End. " + " " + "Encadeamento");
 

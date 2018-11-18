@@ -11,7 +11,7 @@ public class Main {
 		Fat fat = new Fat();
 		scanner = new Scanner(System.in);
 		int opt;
-		boolean fatInvalido = false;
+		boolean fatInvalido;
 		
 		do {
 			System.out.println("Digite o tamanho do disco em Bytes");
@@ -39,7 +39,12 @@ public class Main {
 			
 			switch (opt) {
 			case 1:
-				System.out.println();
+				System.out.println("Digite o nome do Arquivo: ");
+				String nomeArq = scanner.nextLine();
+				System.out.println("Digite o tamanho do arquivo: ");
+				int tamArq = scanner.nextInt();
+				
+				
 				break;
 				
 			case 2:
